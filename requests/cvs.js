@@ -169,7 +169,7 @@ console.log(c);
     txt = txt.replace(/.$/, ', "id":' + maxID + ', "photo_id":"'+c+'"}')
     object = JSON.parse(txt);
     database.ref('cvs/' + maxID).set(object);
-    res.send('ok');
+    res.send(maxID);
   });
 });
 

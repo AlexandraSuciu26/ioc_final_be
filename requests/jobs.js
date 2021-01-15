@@ -34,6 +34,7 @@ router.get('/', (request, response) => {
   database.ref('jobs').orderByChild('order_in_list').once('value').then(snapshot => {
     const jobs = snapshot.val();
     let jobsOrdered = [];
+    console.log(jobs);
     jobs.forEach(element => { jobsOrdered.push(element) });
 
     jobsOrdered.sort(function (a, b) {
